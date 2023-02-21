@@ -1,0 +1,32 @@
+@import './var';
+@mixin shadow-btn($bgColor,$scale,$translateNum,$color, $shadow,$hover,$active) {
+background-color: $bgColor !important;
+  border: 0;
+  color: $textColor;
+  text-transform: uppercase;
+  transition: all .2s;
+  @if $shadow {
+     box-shadow: 0 $scale 0 $color }
+    
+@else {
+     box-shadow: 0 $scale 0 $color ;
+  }
+   @if $hover {
+     transform: translateY($translateNum);}
+    
+@else {
+     transform: translateY($translateNum)
+  }
+    @if $active {
+     transform: translateY($translateNum);}
+    
+@else {
+     transform: translateY($translateNum)
+  }
+}
+//font style
+@mixin font-style($size,$weight){
+     font-size: $size;
+  font-weight: $weight;
+}
+

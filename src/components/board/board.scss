@@ -1,0 +1,43 @@
+@import "../../var";
+.board-main{
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   gap:10px
+}
+.board-body{
+    margin:100px 0px;
+    &__container{
+        @extend .board-main
+    }
+  
+}
+.board-turn{
+     background-color: $colorSky ;
+    box-shadow:0 0 8px rgba(163 ,98, 7 , 20%);
+    border-radius: 5px;
+    margin-bottom: 0;
+    padding: 0 14px 4px;
+
+}
+.board-card{
+     background-color: #91a8af;
+    box-shadow:0 0 8px rgba(163 ,98, 7 , 20%);
+    border-radius: 5px;
+    margin-bottom: 0;
+    padding: 0 14px 4px;
+
+}
+.board-body__card{
+    @extend .board-card;
+    font-size: 30px;
+    font-weight: 600;
+    color:#2b619d;
+    height:80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ .active-line{
+background:$colorblueLight;
+box-shadow:0 8px 0 rgba(163 ,98, 7 , 20%);
+ }
