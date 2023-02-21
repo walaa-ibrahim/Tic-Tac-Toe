@@ -10,7 +10,6 @@ const BoardPage = () => {
   const {
     bordCell,
     ties,
-    xnext,
     ReloadHandeler,
     hideHandeler,
     winner,

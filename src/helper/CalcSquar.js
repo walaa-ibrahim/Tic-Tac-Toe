@@ -1,4 +1,3 @@
-import {useState } from "react";
 
 const lines = [
   [0, 1, 2],
