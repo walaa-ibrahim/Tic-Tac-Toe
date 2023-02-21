@@ -40,7 +40,7 @@ const BoardPage = () => {
         </p> */}
         <Button className="bg-gray" onClick={ReloadHandeler}>
           {" "}
-          <img src="../arrow-clockwise.svg" alt="reload" />
+          <img src="./arrow-clockwise.svg" alt="reload" />
         </Button>
       </div>
       <div className="d-flex align-items-center board-body">
