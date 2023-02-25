@@ -11,8 +11,11 @@ const GameState = ({ children }) => {
   const [winner, setWinner] = useState(null);
   const [winnerLine, setWinnerLine] = useState(null);
   const [ties, setTies] = useState({ x: 0, o: 0, n: 0 });
-  const currentPlayer = activeUser === "o" ? "o" : "x";
+  const currentPlayer = xTurn ? "o" : "x";
   const handelCellClick = (indx) => {
+    if (bordCells[indx] || winner) {
+      return;
+    }
     let newcells = [...bordCells];
     newcells[indx] =
       newcells[indx] === null
@@ -25,28 +28,28 @@ const GameState = ({ children }) => {
     setXTurn(!xTurn);
     checkWinner(newcells);
   };
-  console.log("xTurn", xTurn);
 
   const computerMove = (index) => {
-    let newcells = bordCells;
+        let newcells = [...bordCells];
+
     newcells[index] =
       newcells[index] === null
         ? activeUser === "x" && xTurn
           ? "o"
           : "x"
         : newcells[index];
-    setBoardCells([...bordCells]);
+    setBoardCells([...newcells]);
     setXTurn(!xTurn);
     checkWinner(newcells);
   };
 
-  const emptyIndexes = calcBestMove(bordCells);
+  const emptyIndexes = calcBestMove(bordCells, activeUser === "x" ? "o" : "x");
   const wonCompMove = calcCompWon(bordCells).filter((el) =>
     el.player === activeUser ? "x" : "o"
   );
 
   useEffect(() => {
-    if (xTurn && !winner) {
+    if ( currentPlayer !== activeUser && !winner) {
       if (wonCompMove[0]?.player === "x") {
         computerMove(wonCompMove[0]?.winner);
         return;

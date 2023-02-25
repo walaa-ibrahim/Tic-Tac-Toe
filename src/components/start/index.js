@@ -4,7 +4,7 @@ import { GameContext } from "../../context/GameContext";
 import "./start.scss";
 
 const StartPage = () => {
-  const { activeUser, setActiveUser, setScreen, setXTurn } =
+  const { activeUser, setActiveUser, setScreen } =
     useContext(GameContext);
 
   return (
@@ -30,7 +30,6 @@ const StartPage = () => {
             } `}
             onClick={() => {
               setActiveUser("o");
-              setXTurn(true);
             }}
           >
             o

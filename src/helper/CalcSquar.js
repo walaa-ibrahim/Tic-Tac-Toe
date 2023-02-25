@@ -54,28 +54,31 @@ export const calcCompWon = (squares) => {
 return requiredLine;
 }
 
-export const calcBestMove = (squares) => {
+export const calcBestMove = (squares,player) => {
   const getArray = [];
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] || squares[b] || squares[c]) {
+
       getArray.push([...lines[i]]);
     }
   }
+
   for (let i = 0; i < getArray.length; i++) {
     let val = getArray[i].find((el) => {
       if (squares[el] === null) {
-        return el + '';
+        return el;
       }
       return null;
     });
 
     if (!val) {
+   
       continue;
     } else {
-      return +val;
+      return val;
     }
   }
-  return null;
+  return  null;
 };
  
