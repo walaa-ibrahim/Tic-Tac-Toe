@@ -35,5 +35,4 @@ function BoardModel({ show, onHide, ReloadHandeler }) {
     </>
   );
 }
-export default BoardModel
-
+export default BoardModel;

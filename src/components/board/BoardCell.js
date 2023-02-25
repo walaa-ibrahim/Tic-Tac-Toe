@@ -11,7 +11,7 @@ const BoardCell = ({ user = "no user", indx, active }) => {
       } ${active && user === "o" ? "active-line text-o" : ""}`}
       onClick={() => handelCellClick(indx)}
     >
-      { user === "x" ? "x" : user === "o" ? "o" : ""}
+      {user === "x" ? "x" : user === "o" ? "o" : ""}
     </button>
   );
 };

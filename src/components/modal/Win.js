@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { GameContext } from "../../context/GameContext";
 
 const Win = () => {
-const {winner}=useContext(GameContext)
+  const { winner } = useContext(GameContext);
   return (
     <div>
       <h3>

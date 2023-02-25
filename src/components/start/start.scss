@@ -2,10 +2,10 @@
 @import "../../mixins";
 
 .header {
-   @include font-style(2.5rem,700);
-  
-  &__board{
-     @include font-style(26px,800);
+  @include font-style(2.5rem, 700);
+
+  &__board {
+    @include font-style(26px, 800);
   }
 }
 
@@ -40,24 +40,23 @@
       box-shadow: inset 0 0 8px rgba(15, 119, 237, 0.2);
       // color: $colorRed !important;
     }
-    
   }
   &__text-light {
-      color: $colorGrayLight;
-    }
+    color: $colorGrayLight;
+  }
 }
 .text-x {
-    color: $colorRed !important;
-  }
-  .text-o {
-    color: $colorSky !important;
-  }
+  color: $colorRed !important;
+}
+.text-o {
+  color: $colorSky !important;
+}
 .bg-skyBlue {
   @include shadow-btn(
     $colorSky,
     4px,
     0,
-     $color:rgba(51 ,160, 163 ,74%),
+    $color: rgba(51, 160, 163, 74%),
     $shadow: true,
     $hover: false,
     $active: false
@@ -67,7 +66,7 @@
       $colorSky,
       6px,
       -2px,
-       $color:rgba(51 ,160, 163 ,74%),
+      $color: rgba(51, 160, 163, 74%),
       $shadow: true,
       $hover: true,
       $active: false
@@ -78,7 +77,7 @@
       $colorSky,
       2px,
       2px,
-       $color:rgba(51 ,160, 163 ,74%),
+      $color: rgba(51, 160, 163, 74%),
       $shadow: true,
       $hover: false,
       $active: false
@@ -90,7 +89,7 @@
     #afcfda,
     4px,
     0,
-     $color:rgba(166, 183, 186  , 94%),
+    $color: rgba(166, 183, 186, 94%),
     $shadow: true,
     $hover: false,
     $active: false
@@ -100,7 +99,7 @@
       #afcfda,
       6px,
       -2px,
-      $color:rgba(166, 183, 186  , 94%),
+      $color: rgba(166, 183, 186, 94%),
       $shadow: true,
       $hover: true,
       $active: false
@@ -108,10 +107,10 @@
   }
   &:active {
     @include shadow-btn(
-     #afcfda,
+      #afcfda,
       2px,
       2px,
-      $color:rgba(166, 183, 186  , 94%),
+      $color: rgba(166, 183, 186, 94%),
       $shadow: true,
       $hover: false,
       $active: false
@@ -124,7 +123,7 @@
     $colorRed,
     4px,
     0,
-     $color:rgb(233, 85 ,75 , 72%),
+    $color: rgb(233, 85, 75, 72%),
     $shadow: false,
     $hover: false,
     $active: false
@@ -134,7 +133,7 @@
       $colorRed,
       6px,
       -2px,
-       $color:rgb(233, 85 ,75 , 72%),
+      $color: rgb(233, 85, 75, 72%),
       $shadow: false,
       $hover: true,
       $active: false
@@ -145,7 +144,7 @@
       $colorRed,
       2px,
       2px,
-       $color:rgb(233, 85 ,75 , 72%),
+      $color: rgb(233, 85, 75, 72%),
       $shadow: false,
       $hover: false,
       $active: true

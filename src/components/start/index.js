@@ -4,9 +4,9 @@ import { GameContext } from "../../context/GameContext";
 import "./start.scss";
 
 const StartPage = () => {
-  const { activeUser, setActiveUser, handelPlayerMode } =
+  const { activeUser, setActiveUser, setScreen, setXTurn } =
     useContext(GameContext);
-  
+
   return (
     <>
       <h2 className="header text-uppercase text-center mb-3">
@@ -28,7 +28,10 @@ const StartPage = () => {
             className={`${activeUser === "o" ? "player-active" : ""} ${
               activeUser === "o" ? "text-o" : ""
             } `}
-            onClick={() => { setActiveUser("o")}}
+            onClick={() => {
+              setActiveUser("o");
+              setXTurn(true);
+            }}
           >
             o
           </span>
@@ -37,16 +40,12 @@ const StartPage = () => {
       </div>
       <Button
         className="bg-skyBlue d-block w-100 my-3"
-        onClick={() => handelPlayerMode("cpu")}
+        onClick={() => {
+          setScreen("board");
+        }}
       >
         Start new game
       </Button>
-      {/* <Button
-        className="bg-red d-block w-100"
-        onClick={() => handelPlayerMode("user")}
-      >
-        new game (vs player)
-      </Button> */}
     </>
   );
 };

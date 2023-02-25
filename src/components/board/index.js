@@ -8,7 +8,7 @@ import "./board.scss";
 import BoardCell from "./BoardCell";
 const BoardPage = () => {
   const {
-    bordCell,
+    bordCells,
     ties,
     ReloadHandeler,
     hideHandeler,
@@ -17,7 +17,6 @@ const BoardPage = () => {
     activeUser,
   } = useContext(GameContext);
   const { open } = useContext(ModelContext);
- 
 
   return (
     <>
@@ -26,26 +25,14 @@ const BoardPage = () => {
           <span className="text-x">x </span>
           <span className="text-o">o</span>
         </h3>
-        {/* <p className="board-turn">
-          <span
-            style={{
-              fontWeight: "600",
-              fontSize: "24px",
-              color: !xnext ? "#cc5252" : "#7cc4d8 ",
-            }}
-          >
-            {!xnext ? "x" : "o"}{" "}
-          </span>
-          TURN
-        </p> */}
+
         <Button className="bg-gray" onClick={ReloadHandeler}>
-          {" "}
           <img src="./arrow-clockwise.svg" alt="reload" />
         </Button>
       </div>
       <div className="d-flex align-items-center board-body">
         <div className="board-body__container w-100 ">
-          {bordCell.map((val, indx) => (
+          {bordCells.map((val, indx) => (
             <BoardCell
               key={indx}
               user={val}
@@ -62,7 +49,7 @@ const BoardPage = () => {
         </Button>
         <Button className="bg-gray">
           <p>ties</p>
-          <strong>{ties.x + ties.o}</strong>{" "}
+          <strong>{ties.x + ties.o + ties.n}</strong>{" "}
         </Button>
         <Button className="bg-skyBlue">
           <p>o ({activeUser === "o" ? "you" : "cpu"})</p>
