@@ -4,7 +4,7 @@ import { GameContext } from "../../context/GameContext";
 import "./start.scss";
 
 const StartPage = () => {
-  const { activeUser, setActiveUser, setScreen } =
+  const { activeUser, setActiveUser, setScreen, computerMove, bordCells } =
     useContext(GameContext);
 
   return (
@@ -30,6 +30,7 @@ const StartPage = () => {
             } `}
             onClick={() => {
               setActiveUser("o");
+              computerMove(Math.ceil(Math.random() * bordCells.length));
             }}
           >
             o

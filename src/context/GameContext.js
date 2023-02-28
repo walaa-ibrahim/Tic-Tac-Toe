@@ -30,7 +30,7 @@ const GameState = ({ children }) => {
   };
 
   const computerMove = (index) => {
-        let newcells = [...bordCells];
+    let newcells = [...bordCells];
 
     newcells[index] =
       newcells[index] === null
@@ -49,7 +49,7 @@ const GameState = ({ children }) => {
   );
 
   useEffect(() => {
-    if ( currentPlayer !== activeUser && !winner) {
+    if (currentPlayer !== activeUser && !winner) {
       if (wonCompMove[0]?.player === "x") {
         computerMove(wonCompMove[0]?.winner);
         return;
@@ -75,9 +75,10 @@ const GameState = ({ children }) => {
     }
   };
   const ReloadHandeler = () => {
+    console.log("activeuser", activeUser);
     setBoardCells(Array(9).fill(null));
     modalHide();
-    setXTurn(false);
+    setXTurn(true);
     setWinner(null);
     setWinnerLine(null);
   };
@@ -118,6 +119,7 @@ const GameState = ({ children }) => {
         ReloadHandeler,
         hideHandeler,
         ties,
+        computerMove,
       }}
     >
       {children}

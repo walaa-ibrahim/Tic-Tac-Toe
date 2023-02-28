@@ -26,7 +26,7 @@ const BoardPage = () => {
           <span className="text-o">o</span>
         </h3>
 
-        <Button className="bg-gray" onClick={ReloadHandeler}>
+        <Button className="bg-gray" onClick={()=>{ReloadHandeler();}}>
           <img src="./arrow-clockwise.svg" alt="reload" />
         </Button>
       </div>
